@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>2 Stroke Engine</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="../../js/tailwind.js"></script>
+    <script src="./script.js"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+    </style>
+  </head>
+
+  <body class="font-project bg-background-light dark:bg-content-dark">
+    <div
+      class="relative flex h-auto min-h-screen w-full flex-col dark group/design-root overflow-x-hidden"
+    >
+      <div class="layout-container flex h-full grow flex-col">
+        <header
+          class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-border-dark bg-content-dark/80 px-4 py-3 backdrop-blur-sm sm:px-10 md:px-20 lg:px-40"
+        >
+          <div class="flex items-center gap-4 text-white">
+            <div class="size-4 text-primary">
+              <svg
+                fill="none"
+                viewBox="0 0 48 48"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_6_535)">
+                  <path
+                    clip-rule="evenodd"
+                    d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z"
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                  ></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_6_535">
+                    <rect fill="white" height="48" width="48"></rect>
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
+            <h2
+              class="text-text-primary-dark text-lg font-bold leading-tight tracking-[-0.015em]"
+            >
+              Engineer's Portfolio
+            </h2>
+          </div>
+          <a
+            href="../../index.html"
+            class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] transition-colors hover:bg-primary/90"
+          >
+            <span class="truncate">Back to Home</span>
+          </a>
+        </header>
+        <main class="flex flex-1 justify-center py-5">
+          <div
+            class="layout-content-container flex flex-col w-full max-w-5xl px-4 sm:px-10"
+          >
+            <div class="@container mb-8">
+              <div class="@[480px]:py-3">
+                <div
+                  class="bg-cover bg-center flex flex-col justify-end overflow-hidden @[480px]:rounded-lg min-h-[400px] md:min-h-[500px]"
+                  data-alt="A detailed 3D rendering of a V8 twin-turbo engine concept with metallic finishes."
+                  style="
+                    background-image: linear-gradient(
+                        0deg,
+                        rgba(18, 18, 18, 0.8) 0%,
+                        rgba(18, 18, 18, 0) 50%
+                      ),
+                      url('https://lh3.googleusercontent.com/aida-public/AB6AXuCZQEnkYtJouNwAc1H90uOxn0pD9gsIvb6ra66G5SJcDUnE6UfO9VwaIyazw4zUDS3itJKXjwJPyQjqnrv2t3zIvC9dNhh8IeMvq0xRUOhWbfDb3EhQnTHEfVAhBE_AxL5LlWFUJeeeMJaO5LL8VCbeSQS3_t2BBj2wiuEqcf-V1Iv_0FTYI9W-4WITU_2t2RU9I7NWFoctjgxWkVGQSl0E2byajrDMX9lTsqNf8uB3gE-jkU6tyQmPtT_hpkIPZV8EC_kK8PJwWCg');
+                  "
+                >
+                  <div class="flex p-6 md:p-8">
+                    <h1
+                      class="text-white text-4xl md:text-5xl font-bold tracking-tighter"
+                    >
+                      2 Stroke Engine
+                    </h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <section class="border-t border-border-dark py-12">
+              <div class="flex flex-wrap justify-between gap-6 px-4">
+                <div class="flex min-w-72 flex-col gap-3">
+                  <p
+                    class="text-primary text-sm font-bold uppercase tracking-wider"
+                  >
+                    Overview
+                  </p>
+                  <h2
+                    class="text-text-primary-dark text-4xl font-black leading-tight tracking-[-0.033em]"
+                  >
+                    Project Summary
+                  </h2>
+                  <p
+                    class="text-text-secondary-dark text-base font-normal leading-normal max-w-2xl"
+                  >
+                    A concise summary of the project's goals, scope, and my role
+                    in developing this high-performance engine concept.
+                  </p>
+                </div>
+              </div>
+              <p
+                class="text-text-primary-dark text-base font-normal leading-relaxed pb-3 pt-6 px-4"
+              >
+                This project showcases the design and development of a bespoke
+                V8 twin-turbo engine, focusing on achieving maximum performance
+                through innovative material science and advanced thermodynamic
+                principles. My role spanned from initial concept and CAD
+                modeling to finite element analysis and performance simulation.
+                The primary objective was to engineer an engine that not only
+                delivers exceptional power and torque but also maintains
+                reliability and efficiency under extreme conditions.
+              </p>
+            </section>
+            <section class="border-t border-border-dark py-12">
+              <div class="px-4">
+                <div class="flex flex-col gap-3 mb-8">
+                  <p
+                    class="text-primary text-sm font-bold uppercase tracking-wider"
+                  >
+                    Data
+                  </p>
+                  <h2
+                    class="text-text-primary-dark text-4xl font-black leading-tight tracking-[-0.033em]"
+                  >
+                    Technical Specifications
+                  </h2>
+                  <p
+                    class="text-text-secondary-dark text-base font-normal leading-normal max-w-2xl"
+                  >
+                    Key performance metrics, materials, and innovative features
+                    of the engine design.
+                  </p>
+                </div>
+                <div class="overflow-x-auto">
+                  <table class="w-full min-w-[600px] text-left">
+                    <thead class="border-b border-border-dark">
+                      <tr>
+                        <th
+                          class="p-4 text-sm font-semibold uppercase tracking-wider text-text-secondary-dark"
+                        >
+                          Specification
+                        </th>
+                        <th
+                          class="p-4 text-sm font-semibold uppercase tracking-wider text-text-secondary-dark"
+                        >
+                          Value
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="border-b border-border-dark">
+                        <td class="p-4 font-medium text-text-primary-dark">
+                          Engine Type
+                        </td>
+                        <td class="p-4 text-text-secondary-dark">
+                          90° V8 Twin-Turbocharged
+                        </td>
+                      </tr>
+                      <tr class="border-b border-border-dark bg-white/5">
+                        <td class="p-4 font-medium text-text-primary-dark">
+                          Displacement
+                        </td>
+                        <td class="p-4 text-text-secondary-dark">
+                          4.0 Liters (3998 cc)
+                        </td>
+                      </tr>
+                      <tr class="border-b border-border-dark">
+                        <td class="p-4 font-medium text-text-primary-dark">
+                          Max Power Output
+                        </td>
+                        <td class="p-4 font-bold text-primary">
+                          850 HP @ 8,000 RPM
+                        </td>
+                      </tr>
+                      <tr class="border-b border-border-dark bg-white/5">
+                        <td class="p-4 font-medium text-text-primary-dark">
+                          Max Torque
+                        </td>
+                        <td class="p-4 font-bold text-primary">
+                          920 Nm @ 5,500 RPM
+                        </td>
+                      </tr>
+                      <tr class="border-b border-border-dark">
+                        <td class="p-4 font-medium text-text-primary-dark">
+                          Block/Head Material
+                        </td>
+                        <td class="p-4 text-text-secondary-dark">
+                          Forged Aluminum Alloy
+                        </td>
+                      </tr>
+                      <tr class="bg-white/5">
+                        <td class="p-4 font-medium text-text-primary-dark">
+                          Valvetrain
+                        </td>
+                        <td class="p-4 text-text-secondary-dark">
+                          DOHC, 4 Valves per Cylinder
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+            <section class="border-t border-border-dark py-12">
+              <div class="px-4">
+                <div class="flex flex-col gap-3 mb-8">
+                  <p
+                    class="text-primary text-sm font-bold uppercase tracking-wider"
+                  >
+                    Gallery
+                  </p>
+                  <h2
+                    class="text-text-primary-dark text-4xl font-black leading-tight tracking-[-0.033em]"
+                  >
+                    Visual Showcase
+                  </h2>
+                  <p
+                    class="text-text-secondary-dark text-base font-normal leading-normal max-w-2xl"
+                  >
+                    High-resolution renders, detailed views, and motion graphics
+                    of the engine concept.
+                  </p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-4">
+                <div class="relative group overflow-hidden rounded-lg">
+                  <img
+                    id="carousel-img-highlighted"
+                    alt="Close-up render of the engine's intake manifold."
+                    class="w-full h-auto object-cover aspect-[16/9]"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7FTLoSaMsbECYJ5nZz0wxPK2x88XI3arhamfBaJ1FzwEiAmdj9MlaxwN72IMKrzljDHEfBBNQnEVjMpz74vcAQaWwMW_rUdwGV8n5f41v3KFuD69DexHpX8Kq-pNmBlJ-QzjaaXFzdgoReoTd4swlCh1GSp1ZfEkS1gFdnv59unclwuTDYjbzJ1bK-Z8cwvKc0i6Wqncv6jNksp0ksRZsogQh86F4KwNVf5nNc6co8dRYbPPGkd5RA7G-q7rcS7gnyqh-kgtfprA"
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"
+                  ></div>
+                  <div class="absolute bottom-0 left-0 p-6">
+                    <h3
+                      id="carousel-title-highlighted"
+                      class="text-text-primary-dark text-xl font-bold"
+                    >
+                      Intake Manifold Detail
+                    </h3>
+                    <p
+                      id="carousel-description-highlighted"
+                      class="text-text-secondary-dark text-sm mt-1"
+                    >
+                      High-pressure cast aluminum intake manifold.
+                    </p>
+                  </div>
+                  <button
+                    onclick="prevCarouselItem()"
+                    class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/40 text-primary rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-primary hover:text-white focus:outline-none focus:ring-2 focus:ring-primary"
+                  >
+                    <span class="material-symbols-outlined"
+                      >arrow_back_ios_new</span
+                    >
+                  </button>
+                  <button
+                    onclick="nextCarouselItem()"
+                    class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/40 text-primary rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-primary hover:text-white focus:outline-none focus:ring-2 focus:ring-primary"
+                  >
+                    <span class="material-symbols-outlined"
+                      >arrow_forward_ios</span
+                    >
+                  </button>
+                </div>
+                <div
+                  id="carousel-options"
+                  class="grid grid-cols-2 sm:grid-cols-4 gap-4 px-4"
+                ></div>
+              </div>
+            </section>
+            <section class="border-t border-border-dark py-12">
+              <div class="px-4">
+                <div class="flex flex-col gap-3 mb-8">
+                  <p
+                    class="text-primary text-sm font-bold uppercase tracking-wider"
+                  >
+                    Process
+                  </p>
+                  <h2
+                    class="text-text-primary-dark text-4xl font-black leading-tight tracking-[-0.033em]"
+                  >
+                    Design &amp; Engineering
+                  </h2>
+                  <p
+                    class="text-text-secondary-dark text-base font-normal leading-normal max-w-2xl"
+                  >
+                    A step-by-step narrative of the project journey, from
+                    initial concept to simulation.
+                  </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                  <div class="overflow-hidden rounded-lg">
+                    <img
+                      alt="CAD rendering of the engine block on a computer screen."
+                      class="w-full h-auto object-cover"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbk1g29ENybZuPTOnwJMtNtMnaxT7lPd8w0tHcRUh_Qj_x5qeqF4KtLPlcT7QXS8ZPn-ZuAKqYHw2XmhMxBYTz05a3F1NDaYaa8jBa-w1rddScSTnFOh-ly6M33JkX9lDhLnq2e1yRzbvT5mSY32B8bH3gOdm_1GbAj3jm0_W9qRyjNjmDXBeSUPYUwc1VKcObLOQBSiyjjnYJxBrTrq1IKbaXUItciBe5DJ0MYXJ5DlFrg32txBPCEYJH0arrsqrm5TPkseeJW8I"
+                    />
+                  </div>
+                  <div class="flex flex-col gap-4">
+                    <h3 class="text-2xl font-bold text-text-primary-dark">
+                      1. Concept &amp; CAD Modeling
+                    </h3>
+                    <p class="text-text-secondary-dark leading-relaxed">
+                      The process began with extensive research into modern
+                      supercar powertrains. Initial sketches were translated
+                      into detailed 3D models using SolidWorks, focusing on
+                      compact packaging, optimal airflow, and structural
+                      integrity. Every component, from the pistons to the
+                      turbocharger housings, was meticulously modeled.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-12"
+                >
+                  <div class="flex flex-col gap-4 md:order-2">
+                    <h3 class="text-2xl font-bold text-text-primary-dark">
+                      2. Simulation &amp; Analysis
+                    </h3>
+                    <p class="text-text-secondary-dark leading-relaxed">
+                      Computational Fluid Dynamics (CFD) was used to simulate
+                      intake and exhaust gas flow, while Finite Element Analysis
+                      (FEA) helped validate the strength of critical components
+                      under high stress and thermal loads. These simulations
+                      were crucial for optimizing performance and ensuring
+                      durability before any physical prototyping.
+                    </p>
+                  </div>
+                  <div class="overflow-hidden rounded-lg md:order-1">
+                    <img
+                      alt="Abstract visualization of a thermal simulation with a blue and orange heat map."
+                      class="w-full h-auto object-cover"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6c3QM9pOgRzeX7b90Z4SziKgsPhApxFpfJskSalZFo4e2dGVChQGkFTYfzjICD0daPPmaGG7WQudLuUUHvpVReu1Jrq0qBQqwsNI-wZO-sBaIjZ2hFeSvPmEJfd7o_juAIElZRn06VO-Y42SkfR9o9hFqWpSqTv-UFBgrbOJZbq8dd1lOFxJw-GpiBHAJLN7L2aYNA3Hv6MuNP4quGXx3wp1F4kjGrMcf4NolMwIAPAlu8lVmM7cc0qlNvowyerwKW7DOYX9DL98"
+                    />
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="border-t border-border-dark py-12">
+              <div class="px-4">
+                <div class="flex flex-col gap-3 mb-8">
+                  <p
+                    class="text-primary text-sm font-bold uppercase tracking-wider"
+                  >
+                    Problem Solving
+                  </p>
+                  <h2
+                    class="text-text-primary-dark text-4xl font-black leading-tight tracking-[-0.033em]"
+                  >
+                    Challenges &amp; Solutions
+                  </h2>
+                  <p
+                    class="text-text-secondary-dark text-base font-normal leading-normal max-w-2xl"
+                  >
+                    Primary technical hurdles encountered and the innovative
+                    solutions developed to overcome them.
+                  </p>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <details
+                    class="group rounded-lg bg-white/5 p-4 cursor-pointer"
+                  >
+                    <summary
+                      class="flex items-center justify-between font-bold text-text-primary-dark list-none"
+                    >
+                      Thermal Management in a Compact Design
+                      <span
+                        class="material-symbols-outlined text-primary transition-transform group-open:rotate-180"
+                        >expand_more</span
+                      >
+                    </summary>
+                    <p class="mt-4 text-text-secondary-dark">
+                      Solution: An integrated oil-water heat exchanger was
+                      designed, along with optimized coolant channels within the
+                      engine block and heads. CFD analysis was used to ensure
+                      there were no hotspots, maintaining stable operating
+                      temperatures even at peak power output.
+                    </p>
+                  </details>
+                  <details
+                    class="group rounded-lg bg-white/5 p-4 cursor-pointer"
+                  >
+                    <summary
+                      class="flex items-center justify-between font-bold text-text-primary-dark list-none"
+                    >
+                      Minimizing Turbo Lag
+                      <span
+                        class="material-symbols-outlined text-primary transition-transform group-open:rotate-180"
+                        >expand_more</span
+                      >
+                    </summary>
+                    <p class="mt-4 text-text-secondary-dark">
+                      Solution: We implemented a twin-scroll turbocharger design
+                      with lightweight turbine wheels made from a
+                      titanium-aluminide alloy. This, combined with a precisely
+                      engineered exhaust manifold, significantly improved
+                      throttle response and reduced the time to build boost.
+                    </p>
+                  </details>
+                </div>
+              </div>
+            </section>
+          </div>
+        </main>
+        <footer
+          class="bg-brand-gray text-center py-10 px-6 md:px-10 relative z-20"
+          id="contact"
+        >
+          <div class="container mx-auto">
+            <div class="flex justify-center gap-8 mb-6">
+              <a
+                class="text-brand-light-gray/70 hover:text-brand-accent transition-colors duration-300"
+                href="https://www.linkedin.com/in/vincenzo-misuraca-b00965366"
+                target="_blank"
+              >
+                <svg
+                  class="h-6 w-6"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"
+                  ></path>
+                </svg>
+              </a>
+              <a
+                class="text-brand-light-gray/70 hover:text-brand-accent transition-colors duration-300"
+                href="mailto:misuracavincenzo10@gmail.com"
+              >
+                <span class="material-symbols-outlined">mail</span>
+              </a>
+              <!-- <a class="text-brand-light-gray/70 hover:text-brand-accent transition-colors duration-300" href="#">
+                        <span class="material-symbols-outlined">phone</span>
+                    </a> -->
+            </div>
+            <p
+              class="text-brand-light-gray/50 text-xs uppercase tracking-widest"
+            >
+              © 2025 Vincenzo Misuraca. All Rights Reserved.
+            </p>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

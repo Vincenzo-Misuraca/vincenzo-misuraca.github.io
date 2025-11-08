@@ -1,17 +1,226 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Example Page</title>
-</head>
-<body>
-    <h1>This is an h1</h1>
-    <h2>This is an h2</h2>
-    <h3>This is an h3</h3>
-    <h4>This is an h4</h4>
-    <h6>This is an h6</h6>
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Mechanical Engineer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="js/tailwind.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&amp;family=Playfair+Display:wght@700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
 
-    <p>This is a paragraph</p>
-</body>
+  <body class="font-body bg-brand-dark text-brand-light-gray">
+    <div class="relative min-h-screen">
+      <!-- Background image -->
+      <div
+        class="absolute inset-0 z-0 bg-no-repeat bg-top opacity-20"
+        style="
+          background-image: url('img/engine-background.png');
+          background-size: 47%;
+        "
+      ></div>
+      <div
+        class="absolute inset-0 z-10 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent"
+      ></div>
+      <div class="relative z-20 flex flex-col min-h-screen">
+        <header class="w-full px-6 py-4 md:px-10">
+          <div class="container mx-auto flex justify-between items-center">
+            <!-- Top left name -->
+            <div
+              class="text-xl font-display font-bold text-white tracking-wider"
+            >
+              VINCENZO MISURACA
+            </div>
+            <nav
+              class="hidden md:flex items-center gap-8 text-sm uppercase tracking-widest"
+            >
+              <a
+                class="text-white hover:text-brand-accent transition-colors duration-300"
+                href="#about"
+                >About</a
+              >
+              <!-- Commented project navigation button -->
+              <!-- <a class="text-white hover:text-brand-accent transition-colors duration-300"
+                            href="#projects">Projects</a> -->
+              <a
+                class="text-white hover:text-brand-accent transition-colors duration-300"
+                href="#contact"
+                >Contact</a
+              >
+            </nav>
+          </div>
+        </header>
+        <main class="flex-grow flex items-center px-6 md:px-10">
+          <div class="container mx-auto text-center md:text-left py-20">
+            <section
+              class="grid grid-cols-1 md:grid-cols-2 items-center gap-12"
+              id="about"
+            >
+              <div
+                class="flex flex-col items-center md:items-start text-center md:text-left gap-6"
+              >
+                <!-- Role -->
+                <h1
+                  class="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-white tracking-tight"
+                >
+                  Mechanical Technician,<br />CAD and 3D Prototyping.
+                </h1>
+                <!-- Profile description -->
+                <p
+                  class="max-w-2xl text-brand-light-gray/80 text-lg leading-relaxed"
+                >
+                  Mechanical and Mechatronic expert with practical experience in
+                  the mechanical field, specialized in technical drawing,
+                  programming, machine tools and CNC. <br />
+                  Passionate about mechanic, engines and new technologies (3D
+                  printing, CAD a prototyping).
+                </p>
+                <a
+                  href="static/misuraca-vincenzo-cv.pdf"
+                  download="Misuraca_Vincenzo_CV.pdf"
+                  target="_blank"
+                  class="mt-4 px-8 py-3 bg-transparent border-2 border-brand-accent text-brand-accent text-sm font-bold uppercase tracking-widest hover:bg-brand-accent hover:text-brand-dark transition-colors duration-300"
+                >
+                  <span>Download CV</span>
+                </a>
+              </div>
+              <div class="flex justify-center md:justify-end">
+                <!-- Profile picture -->
+                <div
+                  class="w-64 h-64 md:w-80 md:h-80 bg-center bg-no-repeat rounded-full border-4 border-white/10 shadow-2xl"
+                  data-alt="Professional headshot of the engineer"
+                  style="
+                    background-image: url('img/profile-picture.jpg');
+                    background-size: 105%;
+                  "
+                ></div>
+              </div>
+            </section>
+          </div>
+        </main>
+      </div>
+      <section
+        class="bg-brand-dark py-20 px-6 md:px-10 relative z-20"
+        id="projects"
+      >
+        <div class="container mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="font-display text-4xl font-bold text-white">
+              Featured Projects
+            </h2>
+            <div class="mt-2 h-1 w-20 bg-brand-accent mx-auto"></div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Project card (start) -->
+            <div
+              class="group relative overflow-hidden bg-brand-gray border border-white/10 transition-all duration-300 hover:border-brand-accent/50"
+            >
+              <a href="projects/2-stroke-engine/index.html">
+                <div
+                  class="w-full h-56 bg-center bg-no-repeat transition-transform duration-500 group-hover:scale-110"
+                  data-alt="Photo of an advanced engine design"
+                  style="
+                    background-image: url('img/2-stroke-engine-card.png');
+                    background-size: 47%;
+                  "
+                ></div>
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-white">
+                    2 Stroke Engine Assembly
+                  </h3>
+                  <p class="text-brand-light-gray/70 mt-2 text-sm">
+                    Complete 2 stroke engine assembly and performance analysis.
+                  </p>
+                </div>
+              </a>
+            </div>
+            <!-- Project card (end) -->
+            <div
+              class="group relative overflow-hidden bg-brand-gray border border-white/10 transition-all duration-300 hover:border-brand-accent/50"
+            >
+              <div
+                class="w-full h-56 bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-110"
+                data-alt="Computer simulation of vehicle dynamics"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCe3x7Ibrfzui_oGXOkD7A-C2MFxoFEdhmwdcvU69KWfZwzUukQwkW_f5zcSMKWP76-s1ocYHW_YXDKxZYH54iRXQO-GK9sKSUi_kZBBWawar4Yjo8bP0LZlP58CxcTpNcghYii59ececRgQRYk5MRCvatKncsMHVwhNTUAbDpZFnWwXniR8T4A0R7VbYoQFtSHVSgATmGgbryxYRYpG7FOkz8s9TSUvw0BNsxotq5XZ8D0Srkj12BgyJYykPXaZ6QabNPhlzO188I');
+                "
+              ></div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-white">
+                  Vehicle Dynamics Simulation
+                </h3>
+                <p class="text-brand-light-gray/70 mt-2 text-sm">
+                  A brief overview of the vehicle dynamics simulation.
+                </p>
+              </div>
+            </div>
+            <div
+              class="group relative overflow-hidden bg-brand-gray border border-white/10 transition-all duration-300 hover:border-brand-accent/50"
+            >
+              <div
+                class="w-full h-56 bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-110"
+                data-alt="Prototype of a robotic arm"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCJ76zbSCyrNzI-LJUCEzb4b0gWHVojFS9J40vq0WHuKotzckRuT6P9C8L-w-wEKjaRNAk_vCvPVAdSRttMPnU84WBng5K4xb0-X2oe4RyWCYGTuMK6QEii4efcBS68aQPkuo4g6d3yTTeafI-dNltA-HdJTpL_B_vJmUlKGx9TDV6dFsPx5PTZgeLpCL63HtzxELCUWpcZ9OMYaDMB3LX1l_BdSAuQIHFgEyICxbutuX-Ps9eR-p9m050qXfHa8qFLncqQQ0iB-vs');
+                "
+              ></div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-white">
+                  Robotics Arm Prototype
+                </h3>
+                <p class="text-brand-light-gray/70 mt-2 text-sm">
+                  Details about the custom-built robotics arm.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer
+        class="bg-brand-gray text-center py-10 px-6 md:px-10 relative z-20"
+        id="contact"
+      >
+        <div class="container mx-auto">
+          <div class="flex justify-center gap-8 mb-6">
+            <a
+              class="text-brand-light-gray/70 hover:text-brand-accent transition-colors duration-300"
+              href="https://www.linkedin.com/in/vincenzo-misuraca-b00965366"
+              target="_blank"
+            >
+              <svg
+                class="h-6 w-6"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"
+                ></path>
+              </svg>
+            </a>
+            <a
+              class="text-brand-light-gray/70 hover:text-brand-accent transition-colors duration-300"
+              href="mailto:misuracavincenzo10@gmail.com"
+            >
+              <span class="material-symbols-outlined">mail</span>
+            </a>
+            <!-- <a class="text-brand-light-gray/70 hover:text-brand-accent transition-colors duration-300" href="#">
+                        <span class="material-symbols-outlined">phone</span>
+                    </a> -->
+          </div>
+          <p class="text-brand-light-gray/50 text-xs uppercase tracking-widest">
+            © 2025 Vincenzo Misuraca. All Rights Reserved.
+          </p>
+        </div>
+      </footer>
+    </div>
+  </body>
 </html>
