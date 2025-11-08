@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Mechanical Engineer Portfolio</title>
+    <title>Vincenzo Misuraca's Portfolio</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script src="js/tailwind.js"></script>
     <link
@@ -21,42 +21,53 @@
     <div class="relative min-h-screen">
       <!-- Background image -->
       <div
-        class="absolute inset-0 z-0 bg-no-repeat bg-top opacity-20"
+        class="absolute inset-0 z-0 bg-no-repeat bg-top opacity-20 bg-[length:100%] md:bg-[length:27%] mt-14"
         style="
           background-image: url('img/engine-background.png');
-          background-size: 47%;
         "
       ></div>
       <div
         class="absolute inset-0 z-10 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent"
       ></div>
-      <div class="relative z-20 flex flex-col min-h-screen">
-        <header class="w-full px-6 py-4 md:px-10">
-          <div class="container mx-auto flex justify-between items-center">
-            <!-- Top left name -->
-            <div
-              class="text-xl font-display font-bold text-white tracking-wider"
-            >
-              VINCENZO MISURACA
+      <div class="relative z-20 flex flex-col">
+        <header
+          class="font-project sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-border-dark bg-content-dark/80 px-4 py-3 backdrop-blur-sm sm:px-10 md:px-20 lg:px-40"
+        >
+          <div class="flex items-center gap-4 text-white">
+            <div class="size-4 text-primary">
+              <!-- Icon -->
+              <svg
+                fill="none"
+                viewBox="0 0 48 48"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_6_535)">
+                  <path
+                    clip-rule="evenodd"
+                    d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z"
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                  ></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_6_535">
+                    <rect fill="white" height="48" width="48"></rect>
+                  </clipPath>
+                </defs>
+              </svg>
             </div>
-            <nav
-              class="hidden md:flex items-center gap-8 text-sm uppercase tracking-widest"
+            <h2
+              class="text-text-primary-dark text-lg font-bold leading-tight tracking-[-0.015em]"
             >
-              <a
-                class="text-white hover:text-brand-accent transition-colors duration-300"
-                href="#about"
-                >About</a
-              >
-              <!-- Commented project navigation button -->
-              <!-- <a class="text-white hover:text-brand-accent transition-colors duration-300"
-                            href="#projects">Projects</a> -->
-              <a
-                class="text-white hover:text-brand-accent transition-colors duration-300"
-                href="#contact"
-                >Contact</a
-              >
-            </nav>
+              Vincenzo Misuraca
+            </h2>
           </div>
+          <a
+            href="about.html"
+            class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] transition-colors hover:bg-primary/90"
+          >
+            <span class="truncate">About me</span>
+          </a>
         </header>
         <main class="flex-grow flex items-center px-6 md:px-10">
           <div class="container mx-auto text-center md:text-left py-20">
@@ -108,7 +119,7 @@
         </main>
       </div>
       <section
-        class="bg-brand-dark py-20 px-6 md:px-10 relative z-20"
+        class="bg-brand-dark md:py-20 pb-5 px-6 md:px-10 relative z-20"
         id="projects"
       >
         <div class="container mx-auto">

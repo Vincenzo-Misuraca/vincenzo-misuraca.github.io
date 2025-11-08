@@ -14,6 +14,9 @@ tailwind.config = {
         "brand-dark": "#0A0A0A",
         "brand-gray": "#1A1A1A",
         "brand-light-gray": "#D1D5DB",
+        "card-dark": "#1e1e1e",
+        "text-heading-dark": "#eaeaea",
+        "text-body-dark": "#a9a9a9",
       },
       fontFamily: {
         display: ["Playfair Display", "serif"],
