@@ -84,14 +84,14 @@
                         rgba(18, 18, 18, 0.8) 0%,
                         rgba(18, 18, 18, 0) 50%
                       ),
-                      url(img/engine-cover.jpeg);
+                      url(img/gearbox-cover.jpeg);
                   "
                 >
                   <div class="flex p-6 md:p-8">
                     <h1
                       class="text-white text-4xl md:text-5xl font-bold tracking-tighter"
                     >
-                      2 Stroke Engine
+                      Sequential Dog-Ring Gearbox
                     </h1>
                   </div>
                 </div>
@@ -114,20 +114,22 @@
                     class="text-text-secondary-dark text-base font-normal leading-normal max-w-2xl"
                   >
                     A concise summary of the project's goals, scope, and my role
-                    in developing this high-performance engine concept.
+                    in developing this high-performance clutch concept.
                   </p>
                 </div>
               </div>
               <p
                 class="text-text-primary-dark text-base font-normal leading-relaxed pb-3 pt-6 px-4"
               >
-                This project showcases the design and development of a custom 86cc two-stroke engine, 
-                focusing on achieving maximum performance through innovative material engineering and 
-                advanced thermodynamic optimization. My role encompassed the entire process 
-                — from initial concept and CAD modeling to finite element analysis (FEA) and performance simulation. 
-                The main objective was to engineer a lightweight, high-revving engine that delivers exceptional
-                 power output and throttle response, while maintaining mechanical reliability and thermal efficiency 
-                 under extreme operating conditions typical of high-performance small-displacement engines.
+                This project involved the design and development of a Custom Sequential Dog-Ring Gearbox 
+                optimized for a high-performance Two-Stroke engine. The primary goal was to manage 
+                high torsional stress while achieving maximum transmission efficiency and ultra-fast, reliable 
+                shifting. My role covered the complete engineering process, from kinematic analysis and gear 
+                ratio definition to comprehensive CAD modeling of the shafts, the straight-cut gear train, and the 
+                shift mechanism. A critical aspect was the material selection (Case-Hardening Steels) and the fine-tuning 
+                of the dog-ring geometry to ensure positive engagement and prevent gear jump-out under the 2T engine's violent 
+                torque pulses. The final design successfully delivered a transmission system with superior mechanical holding 
+                power under load and exceptional service life, critical for maximizing the high-power output of the engine.
               </p>
             </section>
             <section class="border-t border-border-dark py-12">
@@ -169,50 +171,50 @@
                     <tbody>
                       <tr class="border-b border-border-dark">
                         <td class="p-4 font-medium text-text-primary-dark">
-                          Engine Type
+                          Transmission Type
                         </td>
                         <td class="p-4 text-text-secondary-dark">
-                          Single-Cylinder Two-Stroke
+                          Sequential Dog-Ring Gearbox
                         </td>
                       </tr>
                       <tr class="border-b border-border-dark bg-white/5">
                         <td class="p-4 font-medium text-text-primary-dark">
-                          Displacement
+                          Bearing Type
                         </td>
                         <td class="p-4 text-text-secondary-dark">
-                          86cc
+                          Ball bearings with high-speed rating
                         </td>
                       </tr>
                       <tr class="border-b border-border-dark">
                         <td class="p-4 font-medium text-text-primary-dark">
-                          Max Power Output
+                          Shift Mechanism
                         </td>
                         <td class="p-4 font-bold text-primary">
-                          25 HP @ 14,500 RPM
+                          Selector Forks (3 units) with Selector Drum
                         </td>
                       </tr>
                       <tr class="border-b border-border-dark bg-white/5">
                         <td class="p-4 font-medium text-text-primary-dark">
-                          Max Torque
+                          Shaft Material
                         </td>
                         <td class="p-4 font-bold text-primary">
-                          13 Nm @ 13,900 RPM
+                          High-strength alloy steel
                         </td>
                       </tr>
                       <tr class="border-b border-border-dark">
                         <td class="p-4 font-medium text-text-primary-dark">
-                          Block/Head Material
+                          Gear Material
                         </td>
                         <td class="p-4 text-text-secondary-dark">
-                          Forged Aluminum Alloy
+                          Forged and heat-treated alloy steel
                         </td>
                       </tr>
                       <tr class="bg-white/5">
                         <td class="p-4 font-medium text-text-primary-dark">
-                          Bore x Stroke 
+                          Transmission Assembly Weight
                         </td>
                         <td class="p-4 text-text-secondary-dark">
-                          50 x 44 mm
+                          2.5 Kg 
                         </td>
                       </tr>
                     </tbody>
@@ -315,7 +317,7 @@
                     <img
                       alt="CAD rendering of the engine block on a computer screen."
                       class="w-full h-auto object-cover"
-                      src="img/gemini-engine.jpeg"
+                      src="img/gemini-gearbox.jpeg"
                     />
                   </div>
                   <div class="flex flex-col gap-4">
@@ -323,10 +325,11 @@
                       1. Concept &amp; CAD Modeling
                     </h3>
                     <p class="text-text-secondary-dark leading-relaxed">
-                      The process began with extensive research into the powertrains of modern motorcycles. 
-                      Initial sketches were transformed into detailed 3D models using SolidWorks, 
-                      focusing on compact packaging, optimal airflow, and structural integrity. 
-                      Every component, from the pistons to the gearbox gears, was meticulously modeled.
+                      The process began with in-depth research into modern sequential gearbox architectures, 
+                      particularly those used in high-performance racing applications. Initial sketches were 
+                      transformed into detailed 3D models using SolidWorks, focusing specifically on compact packaging, 
+                      optimal shift fork kinematics, and structural integrity. Every critical component, from the gear teeth 
+                      and dog rings to the main shafts and shift drum, was meticulously modeled.
                     </p>
                   </div>
                 </div>
@@ -338,14 +341,18 @@
                       2. Simulation &amp; Analysis
                     </h3>
                     <p class="text-text-secondary-dark leading-relaxed">
-                      Simulations of engine performance, power output both at the crankshaft and at the wheel, volumetric efficiency, and fuel flow rate were conducted using MATLAB, allowing for a detailed analysis of various operating conditions. These simulations were crucial for optimizing performance and ensuring reliability before any physical prototyping.
+                      Simulations of gear and shaft behavior under high load conditions, as well as critical 
+                      analyses like tooth strength (Hertzian contact calculations) and transmission efficiency, 
+                      were conducted using MATLAB. These simulations were crucial for optimizing the final gear ratios, 
+                      ensuring reliable shift engagement kinetics, and verifying the overall structural durability under 
+                      various operating extremes before any physical prototyping commenced.
                     </p>
                   </div>
                   <div class="overflow-hidden rounded-lg md:order-1">
                     <img
                       alt="Abstract visualization of a thermal simulation with a blue and orange heat map."
                       class="w-full h-auto object-cover"
-                      src="img/Grafico.jpg"
+                      src="img/graph-gearbox.jpg"
                     />
                   </div>
                 </div>
@@ -378,18 +385,17 @@
                     <summary
                       class="flex items-center justify-between font-bold text-text-primary-dark list-none"
                     >
-                      Maximizing Specific Power (HP/L) and Durability
+                      Maximizing Transmission Efficiency and Durability
                       <span
                         class="material-symbols-outlined text-primary transition-transform group-open:rotate-180"
                         >expand_more</span
                       >
                     </summary>
                     <p class="mt-4 text-text-secondary-dark">
-                      Solution: A cylinder with a Nikasil coating (a nickel-dispersed silicon carbide matrix)
-                       applied electrochemically was utilized. This coating reduces friction, 
-                       increases wear resistance, and significantly improves heat transfer. 
-                       This was combined with optimized port timing diagrams to achieve the maximum transfer area
-                        (ports) compatible with a high Effective Compression Ratio (ECR).
+                      Solution: A low-friction surface finish (such as lapping or DLC - Diamond-Like Carbon coatings) 
+                      was applied to the high-stress gears and dog rings. This coating reduces sliding and rolling friction, 
+                      increases wear resistance, and significantly improves heat dissipation. This optimization was combined 
+                      with a fine-tuning of the gear tooth profile to minimize power losses during torque transfer.
                     </p>
                   </details>
                   <details
@@ -405,12 +411,10 @@
                       >
                     </summary>
                     <p class="mt-4 text-text-secondary-dark">
-                      Solution: For the connecting rod bearing at the crank pin, an silver-plated cage 
-                      (or high-slipperiness coated cage) and precision rollers were chosen to maximize
-                       the speed limit and seizure resistance. Furthermore, the gearbox and clutch use 
-                       a separate oil bath. An optimized crankcase breathing system was designed, along
-                        with C4/C5 type main bearings (with increased clearances) to manage thermal expansion 
-                        and high rotational speeds, ensuring long-term durability.
+                      Solution: To support the shafts, precision ball bearings with silver or polymer cages (for high-slipperiness) 
+                      were selected to maximize the speed limit and seizure resistance. Furthermore, an optimized lubrication system 
+                      (separate oil bath or spray jet system) was engineered, and main bearings with increased clearances (C4/C5) 
+                      were utilized to manage thermal expansion and high rotational speeds, ensuring long-term durability.
                     </p>
                   </details>
                 </div>
