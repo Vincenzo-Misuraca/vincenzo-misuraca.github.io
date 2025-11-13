@@ -251,70 +251,116 @@
 
     <!-- JS scroll mobile: overlay uno alla volta + durata centrale + fine pagina -->
     <script>
-      if (window.innerWidth < 768) {
-        // mobile only
-        const cards = document.querySelectorAll(".project-card");
+      (function () {
+        const MOBILE_BREAKPOINT = 768;
+        const TRANSITION_SHORT = "0.3s";
+        const TRANSITION_LONG = "0.6s";
 
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              const overlay = entry.target.querySelector(".overlay");
-              if (!overlay) return;
+        let cards = [];
 
-              const rect = entry.target.getBoundingClientRect();
-              const windowHeight = window.innerHeight;
+        function isMobile() {
+          return window.innerWidth < MOBILE_BREAKPOINT;
+        }
 
-              if (entry.isIntersecting) {
-                // Nascondo tutti gli altri overlay
-                cards.forEach((c) => {
-                  const o = c.querySelector(".overlay");
-                  if (o && o !== overlay) {
-                    o.classList.remove("opacity-100");
-                    o.classList.add("translate-y-6");
-                  }
-                });
+        function hideOverlay(overlay, duration = TRANSITION_SHORT) {
+          overlay.classList.remove("opacity-100", "translate-y-0");
+          overlay.classList.add("translate-y-6");
+          overlay.style.transitionDuration = duration;
+        }
 
-                // Mostro overlay corrente
-                overlay.classList.add("opacity-100", "translate-y-0");
-                overlay.classList.remove("translate-y-6");
+        function showOverlay(overlay, duration = TRANSITION_LONG) {
+          overlay.classList.add("opacity-100", "translate-y-0");
+          overlay.classList.remove("translate-y-6");
+          overlay.style.transitionDuration = duration;
+        }
 
-                // Overlay centrale resta più a lungo
-                if (
-                  rect.top < windowHeight / 2 &&
-                  rect.bottom > windowHeight / 2
-                ) {
-                  overlay.style.transitionDuration = "0.6s";
-                } else {
-                  overlay.style.transitionDuration = "0.3s";
-                }
-              } else {
-                overlay.classList.remove("opacity-100");
-                overlay.classList.add("translate-y-6");
-              }
-            });
-          },
-          { threshold: 0.5 }
-        );
+        function updateOverlays() {
+          if (!isMobile()) return;
 
-        cards.forEach((card) => observer.observe(card));
+          const windowCenter = window.innerHeight / 2;
+          let closestCard = null;
+          let minDistance = Infinity;
 
-        // Scroll listener per fine page
-        window.addEventListener("scroll", () => {
+          cards.forEach((card) => {
+            const overlay = card.querySelector(".overlay");
+            if (!overlay) return;
+
+            const rect = card.getBoundingClientRect();
+            const cardCenter = rect.top + rect.height / 2;
+
+            // Calcolo percentuale visibile della card
+            const visibleHeight =
+              Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0);
+            const visibilityRatio = visibleHeight / rect.height;
+
+            if (visibilityRatio <= 0) return; // card completamente fuori dallo schermo
+
+            const distance = Math.abs(windowCenter - cardCenter);
+
+            if (distance < minDistance) {
+              minDistance = distance;
+              closestCard = card;
+            }
+          });
+
+          cards.forEach((card) => {
+            const overlay = card.querySelector(".overlay");
+            if (!overlay) return;
+
+            const rect = card.getBoundingClientRect();
+            const visibleHeight =
+              Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0);
+            const visibilityRatio = visibleHeight / rect.height;
+
+            if (card === closestCard && visibilityRatio > 0.4) {
+              showOverlay(overlay, TRANSITION_LONG);
+            } else {
+              hideOverlay(overlay, TRANSITION_SHORT);
+            }
+          });
+        }
+
+        function hideAllOverlays() {
+          cards.forEach((card) => {
+            const overlay = card.querySelector(".overlay");
+            if (overlay) hideOverlay(overlay, TRANSITION_SHORT);
+          });
+        }
+
+        function onScrollOrResize() {
           const scrollBottom = window.innerHeight + window.scrollY;
           const pageHeight = document.documentElement.scrollHeight;
 
           if (scrollBottom >= pageHeight - 20) {
-            // fine pagina
-            cards.forEach((c) => {
-              const o = c.querySelector(".overlay");
-              if (o) {
-                o.classList.remove("opacity-100");
-                o.classList.add("translate-y-6");
-              }
-            });
+            // Fine pagina: nasconde tutti gli overlay
+            hideAllOverlays();
+          } else {
+            updateOverlays();
           }
-        });
-      }
+        }
+
+        function init() {
+          if (!isMobile()) return;
+
+          cards = Array.from(document.querySelectorAll(".project-card"));
+          if (!cards.length) return;
+
+          hideAllOverlays();
+          updateOverlays();
+
+          window.addEventListener("scroll", onScrollOrResize, {
+            passive: true,
+          });
+          window.addEventListener("resize", onScrollOrResize);
+          window.addEventListener("orientationchange", onScrollOrResize);
+        }
+
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", init);
+        } else {
+          init();
+        }
+      })();
     </script>
   </body>
 </html>
