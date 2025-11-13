@@ -1,6 +1,5 @@
 const carouselItems = [
   {
-    //Example carousel
     src: "img/carousel-1.jpeg",
     alt: "Side View Render of the 2-Stroke Engine Block and Clutch.",
     title: "Side View Render of the 2-Stroke Engine Block and Clutch",
@@ -32,10 +31,14 @@ const carouselItems = [
     element: null,
   },
 ];
-// ring-primary
+
 let carouselImgHighlighted;
 let carouselTitleHighlighted;
 let carouselDescriptionHighlighted;
+let carouselTitleHighlightedMobile;
+let carouselDescriptionHighlightedMobile;
+let currentIndex = -1;
+
 window.onload = () => {
   carouselImgHighlighted = document.getElementById("carousel-img-highlighted");
   carouselTitleHighlighted = document.getElementById(
@@ -43,6 +46,12 @@ window.onload = () => {
   );
   carouselDescriptionHighlighted = document.getElementById(
     "carousel-description-highlighted"
+  );
+  carouselTitleHighlightedMobile = document.getElementById(
+    "carousel-title-highlighted-mobile"
+  );
+  carouselDescriptionHighlightedMobile = document.getElementById(
+    "carousel-description-highlighted-mobile"
   );
 
   const carouselOptions = document.getElementById("carousel-options");
@@ -60,10 +69,10 @@ window.onload = () => {
     img.classList = "w-full h-full object-cover aspect-video";
     container.appendChild(img);
 
-    const randomDiv = document.createElement("div");
-    randomDiv.classList =
+    const overlay = document.createElement("div");
+    overlay.classList =
       "absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors";
-    container.appendChild(randomDiv);
+    container.appendChild(overlay);
 
     carouselOptions.appendChild(container);
     item.element = container;
@@ -72,15 +81,21 @@ window.onload = () => {
   changeCarouselContent(0);
 };
 
-let currentIndex = -1;
 const changeCarouselContent = (index) => {
   if (index === currentIndex) return;
 
-  carouselImgHighlighted.src = carouselItems[index].src;
-  carouselImgHighlighted.alt = carouselItems[index].alt;
-  carouselTitleHighlighted.innerHTML = carouselItems[index].title;
-  carouselDescriptionHighlighted.innerHTML = carouselItems[index].description;
-  carouselItems[index].element.classList.add("ring-primary");
+  const item = carouselItems[index];
+
+  carouselImgHighlighted.src = item.src;
+  carouselImgHighlighted.alt = item.alt;
+
+  carouselTitleHighlighted.innerHTML = item.title;
+  carouselDescriptionHighlighted.innerHTML = item.description;
+
+  carouselTitleHighlightedMobile.innerHTML = item.title;
+  carouselDescriptionHighlightedMobile.innerHTML = item.description;
+
+  item.element.classList.add("ring-primary");
   if (currentIndex !== -1) {
     carouselItems[currentIndex].element.classList.remove("ring-primary");
   }
@@ -95,6 +110,6 @@ const prevCarouselItem = () => {
 };
 
 const nextCarouselItem = () => {
-  const index = (currentIndex + 1) % carouselItems.length;
+  let index = (currentIndex + 1) % carouselItems.length;
   changeCarouselContent(index);
 };

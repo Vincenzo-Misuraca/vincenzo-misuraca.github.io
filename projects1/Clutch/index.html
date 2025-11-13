@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>2 Stroke Engine</title>
+    <title>Clutch</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script src="../../js/tailwind.js"></script>
     <script src="./script.js"></script>
@@ -41,20 +41,6 @@
                 height="48"
                 style="display: block"
               />
-                <g clip-path="url(#clip0_6_535)">
-                  <path
-                    clip-rule="evenodd"
-                    d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z"
-                    fill="currentColor"
-                    fill-rule="evenodd"
-                  ></path>
-                </g>
-                <defs>
-                  <clipPath id="clip0_6_535">
-                    <rect fill="white" height="48" width="48"></rect>
-                  </clipPath>
-                </defs>
-              </svg>
             </div>
             <h2
               class="text-text-primary-dark text-lg font-bold leading-tight tracking-[-0.015em]"
@@ -69,6 +55,7 @@
             <span class="truncate">Home</span>
           </a>
         </header>
+
         <main class="flex flex-1 justify-center py-5">
           <div
             class="layout-content-container flex flex-col w-full max-w-5xl px-4 sm:px-10"
@@ -97,6 +84,8 @@
                 </div>
               </div>
             </div>
+
+            <!-- === OVERVIEW SECTION === -->
             <section class="border-t border-border-dark py-12">
               <div class="flex flex-wrap justify-between gap-6 px-4">
                 <div class="flex min-w-72 flex-col gap-3">
@@ -121,16 +110,23 @@
               <p
                 class="text-text-primary-dark text-base font-normal leading-relaxed pb-3 pt-6 px-4"
               >
-                This project showcases the design and development of the custom 6-Spring Multi-Disc Clutch 
-                for the two-stroke engine, focusing on managing high torque and achieving maximum performance 
-                through materials engineering and mechanical optimization. My role encompassed the entire process—from 
-                initial concept and CAD modeling (for the hub and basket) to the targeted selection of lightweight alloys 
-                for reduced rotating mass and dynamic validation of the disc pack performance. The main objective was to engineer 
-                a clutch system that ensured fast and reliable engagement, providing maximum holding power and exceptional thermal 
-                dissipation, while maintaining mechanical reliability and efficiency under the extreme operating conditions typical
-                 of high-performance engines.
+                This project showcases the design and development of the custom
+                6-Spring Multi-Disc Clutch for the two-stroke engine, focusing
+                on managing high torque and achieving maximum performance
+                through materials engineering and mechanical optimization. My
+                role encompassed the entire process—from initial concept and CAD
+                modeling (for the hub and basket) to the targeted selection of
+                lightweight alloys for reduced rotating mass and dynamic
+                validation of the disc pack performance. The main objective was
+                to engineer a clutch system that ensured fast and reliable
+                engagement, providing maximum holding power and exceptional
+                thermal dissipation, while maintaining mechanical reliability
+                and efficiency under the extreme operating conditions typical of
+                high-performance engines.
               </p>
             </section>
+
+            <!-- === TECHNICAL DATA === -->
             <section class="border-t border-border-dark py-12">
               <div class="px-4">
                 <div class="flex flex-col gap-3 mb-8">
@@ -204,23 +200,21 @@
                         <td class="p-4 font-medium text-text-primary-dark">
                           Clutch hub Material
                         </td>
-                        <td class="p-4 text-text-secondary-dark">
-                          Ergal 7075
-                        </td>
+                        <td class="p-4 text-text-secondary-dark">Ergal 7075</td>
                       </tr>
                       <tr class="bg-white/5">
                         <td class="p-4 font-medium text-text-primary-dark">
                           Clutch assembly weight
                         </td>
-                        <td class="p-4 text-text-secondary-dark">
-                          1.2 Kg 
-                        </td>
+                        <td class="p-4 text-text-secondary-dark">1.2 Kg</td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
               </div>
             </section>
+
+            <!-- === GALLERY / CAROUSEL === -->
             <section class="border-t border-border-dark py-12">
               <div class="px-4">
                 <div class="flex flex-col gap-3 mb-8">
@@ -242,32 +236,52 @@
                   </p>
                 </div>
               </div>
+
               <div class="flex flex-col gap-4">
                 <div class="relative group overflow-hidden rounded-lg">
+                  <!-- PHOTO -->
                   <img
                     id="carousel-img-highlighted"
-                    alt="Close-up render of the engine's intake manifold."
+                    alt="View of Assembled Clutch with Pressure Plate and Springs"
                     class="w-full h-auto object-cover aspect-[16/9]"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7FTLoSaMsbECYJ5nZz0wxPK2x88XI3arhamfBaJ1FzwEiAmdj9MlaxwN72IMKrzljDHEfBBNQnEVjMpz74vcAQaWwMW_rUdwGV8n5f41v3KFuD69DexHpX8Kq-pNmBlJ-QzjaaXFzdgoReoTd4swlCh1GSp1ZfEkS1gFdnv59unclwuTDYjbzJ1bK-Z8cwvKc0i6Wqncv6jNksp0ksRZsogQh86F4KwNVf5nNc6co8dRYbPPGkd5RA7G-q7rcS7gnyqh-kgtfprA"
-                    
+                    src="img/carousel-clutch-1.jpeg"
                   />
-                  <div
-                    class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"
-                  ></div>
-                  <div class="absolute bottom-0 left-0 p-6">
+
+                  <!-- TEXT DESKTOP -->
+                  <div class="absolute bottom-0 left-0 p-6 hidden md:block">
                     <h3
                       id="carousel-title-highlighted"
                       class="text-text-primary-dark text-xl font-bold"
                     >
-                      Intake Manifold Detail
+                      View of Assembled Clutch with Pressure Plate and Springs
                     </h3>
                     <p
                       id="carousel-description-highlighted"
                       class="text-text-secondary-dark text-sm mt-1"
                     >
-                      High-pressure cast aluminum intake manifold.
+                      Front view of the clutch hub with the mounted pressure
+                      plate and spring set
                     </p>
                   </div>
+
+                  <!-- TESTO MOBILE -->
+                  <div class="block md:hidden mt-4 px-4">
+                    <h3
+                      id="carousel-title-highlighted-mobile"
+                      class="text-text-primary-dark text-xl font-bold"
+                    >
+                      View of Assembled Clutch with Pressure Plate and Springs
+                    </h3>
+                    <p
+                      id="carousel-description-highlighted-mobile"
+                      class="text-text-secondary-dark text-sm mt-1"
+                    >
+                      Front view of the clutch hub with the mounted pressure
+                      plate and spring set
+                    </p>
+                  </div>
+
+                  <!-- BOTTONI -->
                   <button
                     onclick="prevCarouselItem()"
                     class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/40 text-primary rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-primary hover:text-white focus:outline-none focus:ring-2 focus:ring-primary"
@@ -285,12 +299,14 @@
                     >
                   </button>
                 </div>
+
                 <div
                   id="carousel-options"
                   class="grid grid-cols-2 sm:grid-cols-4 gap-4 px-4"
                 ></div>
               </div>
             </section>
+
             <section class="border-t border-border-dark py-12">
               <div class="px-4">
                 <div class="flex flex-col gap-3 mb-8">
@@ -324,13 +340,15 @@
                       1. Concept &amp; CAD Modeling
                     </h3>
                     <p class="text-text-secondary-dark leading-relaxed">
-                      The process began with extensive research into the multi-plate clutch 
-                      architectures commonly found in modern motorcycles, focusing on torque 
-                      management and thermal dissipation.
-                      The initial sketches were transformed into detailed 3D models using SolidWorks. 
-                      Each clutch assembly component –including basket, hub, friction plates, and steel plates– 
-                      has been meticulously molded, emphasizing compactness and structural integrity to ensure precise engagement, 
-                      excellent performance, and extended life.
+                      The process began with extensive research into the
+                      multi-plate clutch architectures commonly found in modern
+                      motorcycles, focusing on torque management and thermal
+                      dissipation. The initial sketches were transformed into
+                      detailed 3D models using SolidWorks. Each clutch assembly
+                      component –including basket, hub, friction plates, and
+                      steel plates– has been meticulously molded, emphasizing
+                      compactness and structural integrity to ensure precise
+                      engagement, excellent performance, and extended life.
                     </p>
                   </div>
                 </div>
@@ -342,12 +360,16 @@
                       2. Simulation &amp; Analysis
                     </h3>
                     <p class="text-text-secondary-dark leading-relaxed">
-                      Simulations were conducted to analyze the interaction of the clutch components, 
-                      its torque transmission capabilities, and thermal behavior. Utilizing tools such as MATLAB,
-                       the dynamic engagement response, specific pressure on the plates, and endurance under load
-                        were thoroughly assessed across various operating conditions. These simulations were crucial
-                         for optimizing material selection, the number and geometry of the plates, and spring forces, 
-                         thereby ensuring maximum reliability prior to any physical prototyping.
+                      Simulations were conducted to analyze the interaction of
+                      the clutch components, its torque transmission
+                      capabilities, and thermal behavior. Utilizing tools such
+                      as MATLAB, the dynamic engagement response, specific
+                      pressure on the plates, and endurance under load were
+                      thoroughly assessed across various operating conditions.
+                      These simulations were crucial for optimizing material
+                      selection, the number and geometry of the plates, and
+                      spring forces, thereby ensuring maximum reliability prior
+                      to any physical prototyping.
                     </p>
                   </div>
                   <div class="overflow-hidden rounded-lg md:order-1">
@@ -394,15 +416,22 @@
                       >
                     </summary>
                     <p class="mt-4 text-text-secondary-dark">
-                      Solution: The gearbox and clutch were engineered to utilize a separate oil bath,
-                       a crucial choice for optimally managing thermal issues and contamination distinct 
-                       from the main engine oil. Within the clutch itself, this approach involved employing 
-                       high-precision friction and steel discs with an optimized geometry to ensure rapid and 
-                       clean disengagement, thereby minimizing drag when the clutch is open. Furthermore, advanced 
-                       materials were selected for the friction surfaces, capable of withstanding extreme shear forces 
-                       and intense thermal cycling without succumbing to wear or performance fade. The design of the basket 
-                       and hub (as seen in the CAD model) carefully addressed tolerances and surface finishes to maximize 
-                       component lifespan and minimize play or rattling, ensuring long-term durability even under maximum stress
+                      Solution: The gearbox and clutch were engineered to
+                      utilize a separate oil bath, a crucial choice for
+                      optimally managing thermal issues and contamination
+                      distinct from the main engine oil. Within the clutch
+                      itself, this approach involved employing high-precision
+                      friction and steel discs with an optimized geometry to
+                      ensure rapid and clean disengagement, thereby minimizing
+                      drag when the clutch is open. Furthermore, advanced
+                      materials were selected for the friction surfaces, capable
+                      of withstanding extreme shear forces and intense thermal
+                      cycling without succumbing to wear or performance fade.
+                      The design of the basket and hub (as seen in the CAD
+                      model) carefully addressed tolerances and surface finishes
+                      to maximize component lifespan and minimize play or
+                      rattling, ensuring long-term durability even under maximum
+                      stress
                     </p>
                   </details>
                   <details
@@ -418,14 +447,19 @@
                       >
                     </summary>
                     <p class="mt-4 text-text-secondary-dark">
-                      Solution: To safely handle the engine's maximum torque, the clutch pack design was optimized 
-                      by precisely calculating the number of friction plates and the necessary spring pre-load. 
-                      This was achieved through the selection of precision springs with a specifically tailored 
-                      rate and length to provide the exact required clamping force, while simultaneously avoiding 
-                      excessive effort at the clutch lever. Finally, the clutch benefits from integrated thermal 
-                      management—thanks to the dedicated oil bath—which is fundamental for dissipating the heat 
-                      generated during slipping and engagement, preserving the integrity of the discs and the oil film 
-                      during maximum power transmission.
+                      Solution: To safely handle the engine's maximum torque,
+                      the clutch pack design was optimized by precisely
+                      calculating the number of friction plates and the
+                      necessary spring pre-load. This was achieved through the
+                      selection of precision springs with a specifically
+                      tailored rate and length to provide the exact required
+                      clamping force, while simultaneously avoiding excessive
+                      effort at the clutch lever. Finally, the clutch benefits
+                      from integrated thermal management—thanks to the dedicated
+                      oil bath—which is fundamental for dissipating the heat
+                      generated during slipping and engagement, preserving the
+                      integrity of the discs and the oil film during maximum
+                      power transmission.
                     </p>
                   </details>
                 </div>

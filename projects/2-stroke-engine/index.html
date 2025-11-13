@@ -6,7 +6,7 @@
     <title>2 Stroke Engine</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script src="../../js/tailwind.js"></script>
-    <script src="./script.js"></script>
+    <script src="./script.js" defer></script>
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
@@ -41,20 +41,6 @@
                 height="48"
                 style="display: block"
               />
-                <g clip-path="url(#clip0_6_535)">
-                  <path
-                    clip-rule="evenodd"
-                    d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z"
-                    fill="currentColor"
-                    fill-rule="evenodd"
-                  ></path>
-                </g>
-                <defs>
-                  <clipPath id="clip0_6_535">
-                    <rect fill="white" height="48" width="48"></rect>
-                  </clipPath>
-                </defs>
-              </svg>
             </div>
             <h2
               class="text-text-primary-dark text-lg font-bold leading-tight tracking-[-0.015em]"
@@ -69,6 +55,7 @@
             <span class="truncate">Home</span>
           </a>
         </header>
+
         <main class="flex flex-1 justify-center py-5">
           <div
             class="layout-content-container flex flex-col w-full max-w-5xl px-4 sm:px-10"
@@ -97,6 +84,8 @@
                 </div>
               </div>
             </div>
+
+            <!-- === OVERVIEW SECTION === -->
             <section class="border-t border-border-dark py-12">
               <div class="flex flex-wrap justify-between gap-6 px-4">
                 <div class="flex min-w-72 flex-col gap-3">
@@ -121,15 +110,21 @@
               <p
                 class="text-text-primary-dark text-base font-normal leading-relaxed pb-3 pt-6 px-4"
               >
-                This project showcases the design and development of a custom 86cc two-stroke engine, 
-                focusing on achieving maximum performance through innovative material engineering and 
-                advanced thermodynamic optimization. My role encompassed the entire process 
-                — from initial concept and CAD modeling to finite element analysis (FEA) and performance simulation. 
-                The main objective was to engineer a lightweight, high-revving engine that delivers exceptional
-                 power output and throttle response, while maintaining mechanical reliability and thermal efficiency 
-                 under extreme operating conditions typical of high-performance small-displacement engines.
+                This project showcases the design and development of a custom
+                86cc two-stroke engine, focusing on achieving maximum
+                performance through innovative material engineering and advanced
+                thermodynamic optimization. My role encompassed the entire
+                process — from initial concept and CAD modeling to finite
+                element analysis (FEA) and performance simulation. The main
+                objective was to engineer a lightweight, high-revving engine
+                that delivers exceptional power output and throttle response,
+                while maintaining mechanical reliability and thermal efficiency
+                under extreme operating conditions typical of high-performance
+                small-displacement engines.
               </p>
             </section>
+
+            <!-- === TECHNICAL DATA === -->
             <section class="border-t border-border-dark py-12">
               <div class="px-4">
                 <div class="flex flex-col gap-3 mb-8">
@@ -179,9 +174,7 @@
                         <td class="p-4 font-medium text-text-primary-dark">
                           Displacement
                         </td>
-                        <td class="p-4 text-text-secondary-dark">
-                          86cc
-                        </td>
+                        <td class="p-4 text-text-secondary-dark">86cc</td>
                       </tr>
                       <tr class="border-b border-border-dark">
                         <td class="p-4 font-medium text-text-primary-dark">
@@ -209,17 +202,17 @@
                       </tr>
                       <tr class="bg-white/5">
                         <td class="p-4 font-medium text-text-primary-dark">
-                          Bore x Stroke 
+                          Bore x Stroke
                         </td>
-                        <td class="p-4 text-text-secondary-dark">
-                          50 x 44 mm
-                        </td>
+                        <td class="p-4 text-text-secondary-dark">50 x 44 mm</td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
               </div>
             </section>
+
+            <!-- === GALLERY / CAROUSEL === -->
             <section class="border-t border-border-dark py-12">
               <div class="px-4">
                 <div class="flex flex-col gap-3 mb-8">
@@ -241,32 +234,52 @@
                   </p>
                 </div>
               </div>
+
               <div class="flex flex-col gap-4">
                 <div class="relative group overflow-hidden rounded-lg">
+                  <!-- PHOTO -->
                   <img
                     id="carousel-img-highlighted"
-                    alt="Close-up render of the engine's intake manifold."
+                    alt="Side View Render of the 2-Stroke Engine Block and Clutch."
                     class="w-full h-auto object-cover aspect-[16/9]"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7FTLoSaMsbECYJ5nZz0wxPK2x88XI3arhamfBaJ1FzwEiAmdj9MlaxwN72IMKrzljDHEfBBNQnEVjMpz74vcAQaWwMW_rUdwGV8n5f41v3KFuD69DexHpX8Kq-pNmBlJ-QzjaaXFzdgoReoTd4swlCh1GSp1ZfEkS1gFdnv59unclwuTDYjbzJ1bK-Z8cwvKc0i6Wqncv6jNksp0ksRZsogQh86F4KwNVf5nNc6co8dRYbPPGkd5RA7G-q7rcS7gnyqh-kgtfprA"
-                    
+                    src="img/carousel-1.jpeg"
                   />
-                  <div
-                    class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"
-                  ></div>
-                  <div class="absolute bottom-0 left-0 p-6">
+
+                  <!-- TEXT DESKTOP -->
+                  <div class="absolute bottom-0 left-0 p-6 hidden md:block">
                     <h3
                       id="carousel-title-highlighted"
                       class="text-text-primary-dark text-xl font-bold"
                     >
-                      Intake Manifold Detail
+                      Side View Render of the 2-Stroke Engine Block and Clutch.
                     </h3>
                     <p
                       id="carousel-description-highlighted"
                       class="text-text-secondary-dark text-sm mt-1"
                     >
-                      High-pressure cast aluminum intake manifold.
+                      A view highlighting the clutch cover and its fastening
+                      bolts
                     </p>
                   </div>
+
+                  <!-- TESTO MOBILE -->
+                  <div class="block md:hidden mt-4 px-4">
+                    <h3
+                      id="carousel-title-highlighted-mobile"
+                      class="text-text-primary-dark text-xl font-bold"
+                    >
+                      Side View Render of the 2-Stroke Engine Block and Clutch.
+                    </h3>
+                    <p
+                      id="carousel-description-highlighted-mobile"
+                      class="text-text-secondary-dark text-sm mt-1"
+                    >
+                      A view highlighting the clutch cover and its fastening
+                      bolts
+                    </p>
+                  </div>
+
+                  <!-- BOTTONI -->
                   <button
                     onclick="prevCarouselItem()"
                     class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/40 text-primary rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-primary hover:text-white focus:outline-none focus:ring-2 focus:ring-primary"
@@ -284,12 +297,15 @@
                     >
                   </button>
                 </div>
+
                 <div
                   id="carousel-options"
                   class="grid grid-cols-2 sm:grid-cols-4 gap-4 px-4"
                 ></div>
               </div>
             </section>
+
+            <!-- === ALTRE SEZIONI (Process, Problem Solving, ecc.) RESTANO UGUALI === -->
             <section class="border-t border-border-dark py-12">
               <div class="px-4">
                 <div class="flex flex-col gap-3 mb-8">
@@ -323,10 +339,12 @@
                       1. Concept &amp; CAD Modeling
                     </h3>
                     <p class="text-text-secondary-dark leading-relaxed">
-                      The process began with extensive research into the powertrains of modern motorcycles. 
-                      Initial sketches were transformed into detailed 3D models using SolidWorks, 
-                      focusing on compact packaging, optimal airflow, and structural integrity. 
-                      Every component, from the pistons to the gearbox gears, was meticulously modeled.
+                      The process began with extensive research into the
+                      powertrains of modern motorcycles. Initial sketches were
+                      transformed into detailed 3D models using SolidWorks,
+                      focusing on compact packaging, optimal airflow, and
+                      structural integrity. Every component, from the pistons to
+                      the gearbox gears, was meticulously modeled.
                     </p>
                   </div>
                 </div>
@@ -338,7 +356,12 @@
                       2. Simulation &amp; Analysis
                     </h3>
                     <p class="text-text-secondary-dark leading-relaxed">
-                      Simulations of engine performance, power output both at the crankshaft and at the wheel, volumetric efficiency, and fuel flow rate were conducted using MATLAB, allowing for a detailed analysis of various operating conditions. These simulations were crucial for optimizing performance and ensuring reliability before any physical prototyping.
+                      Simulations of engine performance, power output both at
+                      the crankshaft and at the wheel, volumetric efficiency,
+                      and fuel flow rate were conducted using MATLAB, allowing
+                      for a detailed analysis of various operating conditions.
+                      These simulations were crucial for optimizing performance
+                      and ensuring reliability before any physical prototyping.
                     </p>
                   </div>
                   <div class="overflow-hidden rounded-lg md:order-1">
@@ -385,11 +408,14 @@
                       >
                     </summary>
                     <p class="mt-4 text-text-secondary-dark">
-                      Solution: A cylinder with a Nikasil coating (a nickel-dispersed silicon carbide matrix)
-                       applied electrochemically was utilized. This coating reduces friction, 
-                       increases wear resistance, and significantly improves heat transfer. 
-                       This was combined with optimized port timing diagrams to achieve the maximum transfer area
-                        (ports) compatible with a high Effective Compression Ratio (ECR).
+                      Solution: A cylinder with a Nikasil coating (a
+                      nickel-dispersed silicon carbide matrix) applied
+                      electrochemically was utilized. This coating reduces
+                      friction, increases wear resistance, and significantly
+                      improves heat transfer. This was combined with optimized
+                      port timing diagrams to achieve the maximum transfer area
+                      (ports) compatible with a high Effective Compression Ratio
+                      (ECR).
                     </p>
                   </details>
                   <details
@@ -405,12 +431,15 @@
                       >
                     </summary>
                     <p class="mt-4 text-text-secondary-dark">
-                      Solution: For the connecting rod bearing at the crank pin, an silver-plated cage 
-                      (or high-slipperiness coated cage) and precision rollers were chosen to maximize
-                       the speed limit and seizure resistance. Furthermore, the gearbox and clutch use 
-                       a separate oil bath. An optimized crankcase breathing system was designed, along
-                        with C4/C5 type main bearings (with increased clearances) to manage thermal expansion 
-                        and high rotational speeds, ensuring long-term durability.
+                      Solution: For the connecting rod bearing at the crank pin,
+                      an silver-plated cage (or high-slipperiness coated cage)
+                      and precision rollers were chosen to maximize the speed
+                      limit and seizure resistance. Furthermore, the gearbox and
+                      clutch use a separate oil bath. An optimized crankcase
+                      breathing system was designed, along with C4/C5 type main
+                      bearings (with increased clearances) to manage thermal
+                      expansion and high rotational speeds, ensuring long-term
+                      durability.
                     </p>
                   </details>
                 </div>
