@@ -79,6 +79,60 @@ window.onload = () => {
     item.element = container;
   });
 
+  // ===== CALCOLA ALTEZZA MASSIMA DESKTOP =====
+  const desktopTextContainer = document.querySelector(
+    ".relative.group.overflow-hidden.rounded-lg"
+  );
+  let maxHeightDesktop = 0;
+
+  carouselItems.forEach((item) => {
+    const tempTitle = document.createElement("h3");
+    const tempDesc = document.createElement("p");
+    tempTitle.style.position = tempDesc.style.position = "absolute";
+    tempTitle.style.visibility = tempDesc.style.visibility = "hidden";
+    tempTitle.style.width = desktopTextContainer.offsetWidth + "px";
+    tempDesc.style.width = desktopTextContainer.offsetWidth + "px";
+    tempTitle.innerText = item.title;
+    tempDesc.innerText = item.description;
+    document.body.appendChild(tempTitle);
+    document.body.appendChild(tempDesc);
+
+    const totalHeight = tempTitle.offsetHeight + tempDesc.offsetHeight + 16;
+    if (totalHeight > maxHeightDesktop) maxHeightDesktop = totalHeight;
+
+    document.body.removeChild(tempTitle);
+    document.body.removeChild(tempDesc);
+  });
+
+  if (desktopTextContainer)
+    desktopTextContainer.style.minHeight = maxHeightDesktop + "px";
+
+  // ===== CALCOLA ALTEZZA MASSIMA MOBILE =====
+  const mobileTextWrapper = carouselTitleHighlightedMobile.parentElement;
+  let maxHeightMobile = 0;
+
+  carouselItems.forEach((item) => {
+    const tempTitle = document.createElement("h3");
+    const tempDesc = document.createElement("p");
+    tempTitle.style.position = tempDesc.style.position = "absolute";
+    tempTitle.style.visibility = tempDesc.style.visibility = "hidden";
+    tempTitle.style.width = mobileTextWrapper.offsetWidth + "px";
+    tempDesc.style.width = mobileTextWrapper.offsetWidth + "px";
+    tempTitle.innerText = item.title;
+    tempDesc.innerText = item.description;
+    document.body.appendChild(tempTitle);
+    document.body.appendChild(tempDesc);
+
+    const totalHeight = tempTitle.offsetHeight + tempDesc.offsetHeight + 16;
+    if (totalHeight > maxHeightMobile) maxHeightMobile = totalHeight;
+
+    document.body.removeChild(tempTitle);
+    document.body.removeChild(tempDesc);
+  });
+
+  mobileTextWrapper.style.minHeight = maxHeightMobile + "px";
+
+  // Inizializza carosello
   changeCarouselContent(0);
 };
 
