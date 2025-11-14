@@ -26,6 +26,7 @@
       <div
         class="absolute inset-0 z-10 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent"
       ></div>
+
       <div class="relative z-20 flex flex-col">
         <!-- Header -->
         <header
@@ -62,19 +63,20 @@
           class="fixed top-0 right-[-100%] h-full w-3/4 max-w-sm bg-content-dark text-white z-50 shadow-2xl transition-all duration-500 transform flex flex-col p-6"
         >
           <button id="closeMenu" class="self-end text-2xl mb-6">&times;</button>
-          <button class="mb-4 px-6 py-3 bg-primary rounded-lg hover:bg-primary/90 transition-colors">About Me</button>
-          <button class="mb-4 px-6 py-3 bg-primary rounded-lg hover:bg-primary/90 transition-colors">Projects</button>
-          <button class="mb-4 px-6 py-3 bg-primary rounded-lg hover:bg-primary/90 transition-colors">Conta</button>
+
+          <a href="about.html" class="mb-4 px-6 py-3 bg-primary rounded-lg hover:bg-primary/90 transition-colors block text-center">About Me</a>
+          <a href="#projects" class="mb-4 px-6 py-3 bg-primary rounded-lg hover:bg-primary/90 transition-colors block text-center">Projects</a>
+          <a href="code.html" class="mb-4 px-6 py-3 bg-primary rounded-lg hover:bg-primary/90 transition-colors block text-center">Contacts</a>
         </div>
 
-        <!-- Overlay -->
+        <!-- Overlay menu -->
         <div
-          id="overlay"
+          id="overlayMenu"
           class="fixed inset-0 bg-black/50 opacity-0 pointer-events-none z-40 transition-opacity duration-500"
         ></div>
 
-        <!-- About Section -->
-        <main class="flex-grow flex items-center px-6 md:px-10">
+        <!-- Main Content -->
+        <main class="flex-grow flex items-center px-6 md:px-10 relative z-20">
           <div class="container mx-auto text-center md:text-left py-20">
             <section
               class="grid grid-cols-1 md:grid-cols-2 items-center gap-12"
@@ -97,11 +99,11 @@
                   Passionate about mechanic, engines and new technologies (3D
                   printing, CAD a prototyping).
                 </p>
+                <!-- Bottone Download CV -->
                 <a
                   href="static/CV_Misuraca_Vincenzo_en.pdf"
                   download="Misuraca_Vincenzo_CV.pdf"
-                  target="_blank"
-                  class="mt-4 px-8 py-3 bg-transparent border-2 border-brand-accent text-brand-accent text-sm font-bold uppercase tracking-widest hover:bg-brand-accent hover:text-brand-dark transition-colors duration-300"
+                  class="relative mt-4 px-8 py-3 bg-transparent border-2 border-brand-accent text-brand-accent text-sm font-bold uppercase tracking-widest hover:bg-brand-accent hover:text-brand-dark transition-colors duration-300"
                 >
                   <span>Download CV</span>
                 </a>
@@ -132,164 +134,153 @@
               </h2>
               <div class="mt-2 h-1 w-20 bg-brand-accent mx-auto"></div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">   <!-- Project Card 1 -->
-            <div
-              class="group relative overflow-hidden bg-brand-gray border border-white/10 transition-all duration-300 project-card"
-            >
-              <a href="projects/2-stroke-engine/index.html">
-                <div
-                  class="w-full h-56 bg-center bg-no-repeat transition-transform duration-500 group-hover:scale-110 relative"
-                  style="
-                    background-image: url('img/engine-cover.png');
-                    background-size: 47%;
-                  "
-                >
-                  <div
-                    class="overlay absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 translate-y-6 transition-all duration-300 md:group-hover:opacity-100 md:group-hover:translate-y-0"
-                  >
-                    <span class="text-white text-2xl font-bold mb-4"
-                      >Explore Now</span
-                    >
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <!-- Project Card 1 -->
+              <div class="group relative overflow-hidden bg-brand-gray border border-white/10 transition-all duration-300 project-card">
+                <a href="projects/2-stroke-engine/index.html">
+                  <div class="w-full h-56 bg-center bg-no-repeat transition-transform duration-500 group-hover:scale-110 relative"
+                       style="background-image: url('img/engine-cover.png'); background-size: 47%;">
+                    <div class="overlay absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 translate-y-6 transition-all duration-500 md:group-hover:opacity-100 md:group-hover:translate-y-0">
+                      <span class="text-white text-2xl font-bold mb-4">Explore Now</span>
+                    </div>
                   </div>
-                </div>
-                <div class="p-6">
-                  <h3 class="text-xl font-bold text-white">
-                    Two-Stroke Engine Assembly
-                  </h3>
-                  <p class="text-brand-light-gray/70 mt-2 text-sm">
-                    Complete 2 stroke engine assembly and performance analysis.
-                  </p>
-                </div>
-              </a>
-            </div>
+                  <div class="p-6">
+                    <h3 class="text-xl font-bold text-white">Two-Stroke Engine Assembly</h3>
+                    <p class="text-brand-light-gray/70 mt-2 text-sm">Complete 2 stroke engine assembly and performance analysis.</p>
+                  </div>
+                </a>
+              </div>
 
-            <!-- Project Card 2 -->
-            <div
-              class="group relative overflow-hidden bg-brand-gray border border-white/10 transition-all duration-300 project-card"
-            >
-              <a href="projects1/Clutch/index.html">
-                <div
-                  class="w-full h-56 bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-110 relative"
-                  style="
-                    background-image: url('img/clutch-cover.png');
-                    background-size: 50%;
-                  "
-                >
-                  <div
-                    class="overlay absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 translate-y-6 transition-all duration-300 md:group-hover:opacity-100 md:group-hover:translate-y-0"
-                  >
-                    <span class="text-white text-2xl font-bold mb-4"
-                      >Explore Now</span
-                    >
+              <!-- Project Card 2 -->
+              <div class="group relative overflow-hidden bg-brand-gray border border-white/10 transition-all duration-300 project-card">
+                <a href="projects1/Clutch/index.html">
+                  <div class="w-full h-56 bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-110 relative"
+                       style="background-image: url('img/clutch-cover.png'); background-size: 50%;">
+                    <div class="overlay absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 translate-y-6 transition-all duration-500 md:group-hover:opacity-100 md:group-hover:translate-y-0">
+                      <span class="text-white text-2xl font-bold mb-4">Explore Now</span>
+                    </div>
                   </div>
-                </div>
-                <div class="p-6">
-                  <h3 class="text-xl font-bold text-white">
-                    6-Spring Multi-Disc Clutch
-                  </h3>
-                  <p class="text-brand-light-gray/70 mt-2 text-sm">
-                    Details about 6-Spring Multi-Disc Clutch.
-                  </p>
-                </div>
-              </a>
-            </div>
+                  <div class="p-6">
+                    <h3 class="text-xl font-bold text-white">6-Spring Multi-Disc Clutch</h3>
+                    <p class="text-brand-light-gray/70 mt-2 text-sm">Details about 6-Spring Multi-Disc Clutch.</p>
+                  </div>
+                </a>
+              </div>
 
-            <!-- Project Card 3 -->
-            <div
-              class="group relative overflow-hidden bg-brand-gray border border-white/10 transition-all duration-300 project-card"
-            >
-              <a href="projects2/Gearbox/index.html">
-                <div
-                  class="w-full h-56 bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-110 relative"
-                  style="
-                    background-image: url('img/gearbox-cover.png');
-                    background-size: 87%;
-                  "
-                >
-                  <div
-                    class="overlay absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 translate-y-6 transition-all duration-300 md:group-hover:opacity-100 md:group-hover:translate-y-0"
-                  >
-                    <span class="text-white text-2xl font-bold mb-4"
-                      >Explore Now</span
-                    >
+              <!-- Project Card 3 -->
+              <div class="group relative overflow-hidden bg-brand-gray border border-white/10 transition-all duration-300 project-card">
+                <a href="projects2/Gearbox/index.html">
+                  <div class="w-full h-56 bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-110 relative"
+                       style="background-image: url('img/gearbox-cover.png'); background-size: 87%;">
+                    <div class="overlay absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 translate-y-6 transition-all duration-500 md:group-hover:opacity-100 md:group-hover:translate-y-0">
+                      <span class="text-white text-2xl font-bold mb-4">Explore Now</span>
+                    </div>
                   </div>
-                </div>
-                <div class="p-6">
-                  <h3 class="text-xl font-bold text-white">
-                    Sequential Dog-Ring Gearbox
-                  </h3>
-                  <p class="text-brand-light-gray/70 mt-2 text-sm">
-                    Details about the 6-speed gearbox.
-                  </p>
-                </div>
-              </a>
+                  <div class="p-6">
+                    <h3 class="text-xl font-bold text-white">Sequential Dog-Ring Gearbox</h3>
+                    <p class="text-brand-light-gray/70 mt-2 text-sm">Details about the 6-speed gearbox.</p>
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
         <!-- Footer -->
-        <footer
-          class="bg-brand-gray text-center py-10 px-6 md:px-10 relative z-20"
-          id="contact"
-        >
+        <footer class="bg-brand-gray text-center py-10 px-6 md:px-10 relative z-20" id="contact">
           <div class="container mx-auto">
             <div class="flex justify-center gap-8 mb-6">
-              <a
-                class="text-brand-light-gray/70 hover:text-brand-accent transition-colors duration-300"
-                href="https://www.linkedin.com/in/vincenzo-misuraca-b00965366"
-                target="_blank"
-              >
-                <svg
-                  class="h-6 w-6"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"
-                  ></path>
+              <a class="text-brand-light-gray/70 hover:text-brand-accent transition-colors duration-300" href="https://www.linkedin.com/in/vincenzo-misuraca-b00965366" target="_blank">
+                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
                 </svg>
               </a>
-              <a
-                class="text-brand-light-gray/70 hover:text-brand-accent transition-colors duration-300"
-                href="mailto:misuracavincenzo10@gmail.com"
-              >
+              <a class="text-brand-light-gray/70 hover:text-brand-accent transition-colors duration-300" href="mailto:misuracavincenzo10@gmail.com">
                 <span class="material-symbols-outlined">mail</span>
               </a>
             </div>
-            <p class="text-brand-light-gray/50 text-xs uppercase tracking-widest">
-              © 2025 Vincenzo Misuraca. All Rights Reserved.
-            </p>
+            <p class="text-brand-light-gray/50 text-xs uppercase tracking-widest">© 2025 Vincenzo Misuraca. All Rights Reserved.</p>
           </div>
         </footer>
       </div>
 
       <!-- JS scroll mobile + Slide Menu -->
       <script>
-        (function () {
-          // Mobile overlay logic
-          const MOBILE_BREAKPOINT = 768;
-          let cards = [];
-          function isMobile() { return window.innerWidth < MOBILE_BREAKPOINT; }
-          function hideAllOverlays() { cards.forEach(c=>{const o=c.querySelector(".overlay"); if(o)o.classList.remove("opacity-100","translate-y-0"); }); }
-          function updateOverlays() { if(!isMobile())return; const windowCenter=window.innerHeight/2; let closest=null, minDist=Infinity; cards.forEach(c=>{const o=c.querySelector(".overlay"); if(!o)return; const r=c.getBoundingClientRect(); const cCenter=r.top+r.height/2; const dist=Math.abs(windowCenter-cCenter); if(dist<minDist){minDist=dist; closest=c;} }); cards.forEach(c=>{const o=c.querySelector(".overlay"); if(!o)return; const r=c.getBoundingClientRect(); const visibleHeight=Math.min(r.bottom,window.innerHeight)-Math.max(r.top,0); if(c===closest && visibleHeight/r.height>0.4){o.classList.add("opacity-100","translate-y-0");} else{o.classList.remove("opacity-100","translate-y-0");} }); }
-          function onScrollOrResize(){ const scrollBottom=window.innerHeight+window.scrollY; const pageHeight=document.documentElement.scrollHeight; if(scrollBottom>=pageHeight-20){ hideAllOverlays(); } else { updateOverlays(); } }
-          function init(){ if(!isMobile())return; cards=Array.from(document.querySelectorAll(".project-card")); if(!cards.length)return; hideAllOverlays(); updateOverlays(); window.addEventListener("scroll",onScrollOrResize,{passive:true}); window.addEventListener("resize",onScrollOrResize); window.addEventListener("orientationchange",onScrollOrResize);}
-          if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",init);} else{init();}
+      (function() {
+        const menuBtn = document.getElementById('menuBtn');
+        const slideMenu = document.getElementById('slideMenu');
+        const closeMenu = document.getElementById('closeMenu');
+        const overlayMenu = document.getElementById('overlayMenu');
+        const body = document.body;
 
-          // Slide Menu JS
-          const menuBtn=document.getElementById('menuBtn');
-          const slideMenu=document.getElementById('slideMenu');
-          const closeMenu=document.getElementById('closeMenu');
-          const overlayMenu=document.getElementById('overlay');
-          const body=document.body;
-          function openMenu(){ slideMenu.style.right='0'; slideMenu.style.transition='right 0.5s ease-in-out'; overlayMenu.classList.remove('opacity-0','pointer-events-none'); overlayMenu.classList.add('opacity-100'); body.classList.add('overflow-hidden'); }
-          function closeSlideMenu(){ slideMenu.style.right='-100%'; overlayMenu.classList.add('opacity-0'); overlayMenu.classList.remove('opacity-100'); overlayMenu.classList.add('pointer-events-none'); body.classList.remove('overflow-hidden'); }
-          menuBtn.addEventListener('click',openMenu);
-          closeMenu.addEventListener('click',closeSlideMenu);
-          overlayMenu.addEventListener('click',closeSlideMenu);
-        })();
+        function openMenu() {
+          slideMenu.style.right = '0';
+          overlayMenu.classList.remove('opacity-0', 'pointer-events-none');
+          overlayMenu.classList.add('opacity-100');
+          body.classList.add('overflow-hidden');
+        }
+
+        function closeMenuFunc() {
+          slideMenu.style.right = '-100%';
+          overlayMenu.classList.add('opacity-0');
+          overlayMenu.classList.remove('opacity-100');
+          overlayMenu.classList.add('pointer-events-none');
+          body.classList.remove('overflow-hidden');
+        }
+
+        menuBtn.addEventListener('click', openMenu);
+        closeMenu.addEventListener('click', closeMenuFunc);
+        overlayMenu.addEventListener('click', closeMenuFunc);
+
+        // Scroll fluido per ancore interne
+        const menuLinks = slideMenu.querySelectorAll('a');
+        menuLinks.forEach(link => {
+          link.addEventListener('click', function(e) {
+            closeMenuFunc();
+            const href = this.getAttribute('href');
+            if(href.startsWith('#')) {
+              e.preventDefault();
+              const target = document.querySelector(href);
+              if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
+            }
+          });
+        });
+      })();
+
+      // Intersection Observer per mobile: overlay solo sulla card centrale
+      document.addEventListener('DOMContentLoaded', () => {
+        if(window.innerWidth < 768) { // solo mobile
+          const cards = document.querySelectorAll('.project-card');
+
+          const observer = new IntersectionObserver((entries) => {
+            let maxIntersection = 0;
+            let centralCard = null;
+
+            entries.forEach(entry => {
+              if(entry.intersectionRatio > maxIntersection) {
+                maxIntersection = entry.intersectionRatio;
+                centralCard = entry.target;
+              }
+            });
+
+            // Nascondi overlay su tutte le card
+            cards.forEach(card => {
+              const overlay = card.querySelector('.overlay');
+              overlay.classList.remove('opacity-100', 'translate-y-0');
+            });
+
+            // Mostra overlay solo sulla card centrale
+            if(centralCard) {
+              const overlay = centralCard.querySelector('.overlay');
+              overlay.classList.add('opacity-100', 'translate-y-0');
+            }
+          }, {
+            threshold: Array.from({length: 101}, (_, i) => i / 100)
+          });
+
+          cards.forEach(card => observer.observe(card));
+        }
+      });
       </script>
   </body>
 </html>
