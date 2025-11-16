@@ -205,82 +205,121 @@
       </div>
 
       <!-- JS scroll mobile + Slide Menu -->
-      <script>
-      (function() {
-        const menuBtn = document.getElementById('menuBtn');
-        const slideMenu = document.getElementById('slideMenu');
-        const closeMenu = document.getElementById('closeMenu');
-        const overlayMenu = document.getElementById('overlayMenu');
-        const body = document.body;
+<script>
+(function() {
+  const menuBtn = document.getElementById('menuBtn');
+  const slideMenu = document.getElementById('slideMenu');
+  const closeMenu = document.getElementById('closeMenu');
+  const overlayMenu = document.getElementById('overlayMenu');
+  const body = document.body;
 
-        function openMenu() {
-          slideMenu.style.right = '0';
-          overlayMenu.classList.remove('opacity-0', 'pointer-events-none');
-          overlayMenu.classList.add('opacity-100');
-          body.classList.add('overflow-hidden');
-        }
+  function openMenu() {
+    slideMenu.style.right = '0';
+    overlayMenu.classList.remove('opacity-0', 'pointer-events-none');
+    overlayMenu.classList.add('opacity-100');
+    body.classList.add('overflow-hidden');
+  }
 
-        function closeMenuFunc() {
-          slideMenu.style.right = '-100%';
-          overlayMenu.classList.add('opacity-0');
-          overlayMenu.classList.remove('opacity-100');
-          overlayMenu.classList.add('pointer-events-none');
-          body.classList.remove('overflow-hidden');
-        }
+  function closeMenuFunc() {
+    slideMenu.style.right = '-100%';
+    overlayMenu.classList.add('opacity-0');
+    overlayMenu.classList.remove('opacity-100');
+    overlayMenu.classList.add('pointer-events-none');
+    body.classList.remove('overflow-hidden');
+  }
 
-        menuBtn.addEventListener('click', openMenu);
-        closeMenu.addEventListener('click', closeMenuFunc);
-        overlayMenu.addEventListener('click', closeMenuFunc);
+  menuBtn.addEventListener('click', openMenu);
+  closeMenu.addEventListener('click', closeMenuFunc);
+  overlayMenu.addEventListener('click', closeMenuFunc);
 
-        // Scroll fluido per ancore interne
-        const menuLinks = slideMenu.querySelectorAll('a');
-        menuLinks.forEach(link => {
-          link.addEventListener('click', function(e) {
-            closeMenuFunc();
-            const href = this.getAttribute('href');
-            if(href.startsWith('#')) {
-              e.preventDefault();
-              const target = document.querySelector(href);
-              if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
-            }
-          });
-        });
-      })();
+  // Scroll fluido per ancore interne
+  const menuLinks = slideMenu.querySelectorAll('a');
+  menuLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      closeMenuFunc();
+      const href = this.getAttribute('href');
+      if (href.startsWith('#')) {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+})();
 
-      // Intersection Observer per mobile: overlay solo sulla card centrale
-      document.addEventListener('DOMContentLoaded', () => {
-        if(window.innerWidth < 768) { // solo mobile
-          const cards = document.querySelectorAll('.project-card');
 
-          const observer = new IntersectionObserver((entries) => {
-            let maxIntersection = 0;
-            let centralCard = null;
+// ------------------------------
+// MOBILE: Card centrale con overlay + ZOOM
+// ------------------------------
+document.addEventListener('DOMContentLoaded', () => {
+  if (window.innerWidth >= 768) return; // solo mobile
 
-            entries.forEach(entry => {
-              if(entry.intersectionRatio > maxIntersection) {
-                maxIntersection = entry.intersectionRatio;
-                centralCard = entry.target;
-              }
-            });
+  const cards = Array.from(document.querySelectorAll('.project-card'));
+  if (!cards.length) return;
 
-            // Nascondi overlay su tutte le card
-            cards.forEach(card => {
-              const overlay = card.querySelector('.overlay');
-              overlay.classList.remove('opacity-100', 'translate-y-0');
-            });
+  // Mostra overlay e ZOOM SOLO sulla card centrale
+  function updateCardStates(centralCard) {
+    cards.forEach(card => {
+      const overlay = card.querySelector('.overlay');
 
-            // Mostra overlay solo sulla card centrale
-            if(centralCard) {
-              const overlay = centralCard.querySelector('.overlay');
-              overlay.classList.add('opacity-100', 'translate-y-0');
-            }
-          }, {
-            threshold: Array.from({length: 101}, (_, i) => i / 100)
-          });
+      if (card === centralCard) {
+        // overlay ON
+        if (overlay) overlay.classList.add('opacity-100', 'translate-y-0');
 
-          cards.forEach(card => observer.observe(card));
-        }
+        // zoom
+        card.style.transform = "scale(1.06)";
+        card.style.transition = "transform 0.25s ease";
+      } else {
+        // overlay OFF
+        if (overlay) overlay.classList.remove('opacity-100', 'translate-y-0');
+
+        // reset zoom
+        card.style.transform = "scale(1)";
+        card.style.transition = "transform 0.25s ease";
+      }
+    });
+  }
+
+  // Trova la card con il centro più vicino al centro dello schermo
+  function findCentralCard() {
+    const viewportCenter = window.innerHeight / 2;
+    let closestCard = null;
+    let closestDistance = Infinity;
+
+    cards.forEach(card => {
+      const rect = card.getBoundingClientRect();
+      const cardCenter = rect.top + rect.height / 2;
+      const distance = Math.abs(cardCenter - viewportCenter);
+
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closestCard = card;
+      }
+    });
+
+    return closestCard;
+  }
+
+  // Ottimizzato con requestAnimationFrame
+  let ticking = false;
+  function onScrollOrResize() {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(() => {
+        const central = findCentralCard();
+        if (central) updateCardStates(central);
+        ticking = false;
       });
-      </script>
-  </body>
+    }
+  }
+
+  // Inizializzazione
+  onScrollOrResize();
+
+  // Event listeners
+  window.addEventListener('scroll', onScrollOrResize, { passive: true });
+  window.addEventListener('resize', onScrollOrResize);
+});
+</script>
+</body>
 </html>
